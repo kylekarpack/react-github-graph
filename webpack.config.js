@@ -19,12 +19,6 @@ module.exports = {
 						presets: ['@babel/preset-env']
 					}
 				}
-			},
-			{
-				test: /\.css$/,
-				include: path.resolve(__dirname, 'src'),
-				exclude: /(node_modules|bower_components|dist)/,
-				use: ["style-loader", "css-loader"]
 			}
 		]
 	},
@@ -37,6 +31,11 @@ module.exports = {
             commonjs2: "react",          
             amd: "React",          
             root: "React"      
-        }
+		},
+		"styled-components": {
+			commonjs: "styled-components",
+			commonjs2: "styled-components",
+			amd: "styled-components",
+		}
 	}
 };
