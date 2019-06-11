@@ -1,6 +1,6 @@
 {
 	"name": "react-github-graph",
-	"version": "1.0.1",
+	"version": "1.0.4",
 	"description": "A lightweight React component for displaying a graph of Github contributions",
 	"main": "dist/index.js",
 	"author": "Kyle Karpack <kylekarpack@gmail.com>",
@@ -17,9 +17,9 @@
 		"css-loader": "^3.0.0",
 		"react": "^16.8.6",
 		"style-loader": "^0.23.1",
+		"styled-components": "^4.3.1",
 		"webpack": "^2.6.1",
-		"webpack-cli": "^3.3.4",
-		"styled-components": "^4.3.1"
+		"webpack-cli": "^3.3.4"
 	},
 	"peerDependencies": {
 		"react": "^16.8.6",
