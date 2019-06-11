@@ -1,6 +1,6 @@
 {
 	"name": "react-github-graph",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A lightweight React component for displaying a graph of Github contributions",
 	"main": "dist/index.js",
 	"author": "Kyle Karpack <kylekarpack@gmail.com>",
