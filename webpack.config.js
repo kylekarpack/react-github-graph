@@ -24,9 +24,7 @@ module.exports = {
 				test: /\.css$/,
 				include: path.resolve(__dirname, 'src'),
 				exclude: /(node_modules|bower_components|dist)/,
-				use: {
-					loader: "css-loader"
-				}
+				use: ["style-loader", "css-loader"]
 			}
 		]
 	},
