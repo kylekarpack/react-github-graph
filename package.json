@@ -2,7 +2,7 @@
 	"name": "react-github-graph",
 	"version": "1.0.0",
 	"description": "A lightweight React component for displaying a graph of Github contributions",
-	"main": "index.js",
+	"main": "dist/index.js",
 	"author": "Kyle Karpack <kylekarpack@gmail.com>",
 	"license": "MIT",
 	"private": false,
@@ -14,11 +14,13 @@
 		"@babel/plugin-transform-react-jsx": "^7.3.0",
 		"@babel/preset-env": "^7.4.5",
 		"babel-loader": "^8.0.6",
-		"css-loader": "^3.0.0"
-	},
-	"dependencies": {
+		"css-loader": "^3.0.0",
 		"react": "^16.8.6",
-		"webpack": "^2.6.1"
+		"webpack": "^2.6.1",
+		"webpack-cli": "^3.3.4"
+	},
+	"peerDependencies": {
+		"react": "^16.8.6"
 	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",

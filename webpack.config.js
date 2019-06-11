@@ -2,16 +2,17 @@ var path = require('path');
 module.exports = {
 	entry: './src/index.js',
 	output: {
-		path: path.resolve(__dirname, 'build'),
+		path: path.resolve(__dirname, 'dist'),
 		filename: 'index.js',
-		libraryTarget: 'commonjs2'
+		library: "",      
+        libraryTarget: "commonjs"
 	},
 	module: {
 		rules: [
 			{
 				test: /\.(js|jsx)$/,
 				include: path.resolve(__dirname, 'src'),
-				exclude: /(node_modules|bower_components|build)/,
+				exclude: /(node_modules|bower_components|dist)/,
 				use: {
 					loader: 'babel-loader',
 					options: {
@@ -22,7 +23,7 @@ module.exports = {
 			{
 				test: /\.css$/,
 				include: path.resolve(__dirname, 'src'),
-				exclude: /(node_modules|bower_components|build)/,
+				exclude: /(node_modules|bower_components|dist)/,
 				use: {
 					loader: "css-loader"
 				}
@@ -33,6 +34,11 @@ module.exports = {
 		extensions: ['.js', '.jsx']
 	},
 	externals: {
-		'react': 'commonjs react' // Use the React dependency from the project that imports this
+		react: {          
+            commonjs: "react",          
+            commonjs2: "react",          
+            amd: "React",          
+            root: "React"      
+        }
 	}
 };
