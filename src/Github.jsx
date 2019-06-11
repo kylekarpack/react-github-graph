@@ -1,5 +1,5 @@
 import React from "react";
-import "./github.css";
+import { ChartContainer } from "./ChartContainer";
 
 class Github extends React.Component {
 
@@ -69,21 +69,23 @@ class Github extends React.Component {
 
 	render() {
 		return this.state.loaded ? (
-			<div className="contributions">
-				<h2 className="contributions-header">{this.state.header}</h2>
-				<div className="contributions-chart" 
-					onMouseOver={this.handleMouseOver}
-					onMouseOut={this.handleMouseOut}
-					dangerouslySetInnerHTML={{ __html: this.state.chart }}></div>
-				{
-					this.state.tooltip && this.state.tooltip.data ?
-						<div className="tooltip" style={this.state.tooltip.position}>
-							<strong>Date:</strong> {this.state.tooltip.data.date} <br />
-							<strong>Contributions:</strong> {this.state.tooltip.data.count}
-						</div>
-					: ""
-				}
-			</div>
+			<ChartContainer>
+				<div className="contributions">
+					<h2 className="contributions-header">{this.state.header}</h2>
+					<div className="contributions-chart" 
+						onMouseOver={this.handleMouseOver}
+						onMouseOut={this.handleMouseOut}
+						dangerouslySetInnerHTML={{ __html: this.state.chart }}></div>
+					{
+						this.state.tooltip && this.state.tooltip.data ?
+							<div className="tooltip" style={this.state.tooltip.position}>
+								<strong>Date:</strong> {this.state.tooltip.data.date} <br />
+								<strong>Contributions:</strong> {this.state.tooltip.data.count}
+							</div>
+						: ""
+					}
+				</div>
+			</ChartContainer>
 		) : "";
 	}
 
