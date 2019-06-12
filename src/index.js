@@ -1,3 +1,3 @@
-import Github from "./Github";
+import GithubContributions from "./GithubContributions";
 
-export { Github };
+export { GithubContributions };

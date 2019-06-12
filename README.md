@@ -21,14 +21,14 @@ yarn add react-github-graph
 
 ```jsx
 import React from "react";
-import { Github } from "react-github-graph"
+import { GithubContributions } from "react-github-graph"
 
 class Page extends React.Component {
 
 	//...
 	render() {
 		return (
-			<Github username="{your username here}"></Github>
+			<GithubContributions username="{your username here}"></GithubContributions>
 		)
 	}
 
@@ -41,4 +41,4 @@ Currently depends on the following resources:
 - https://cors-anywhere.herokuapp.com
 - https://github.com
 
-If one of these resources is down, the component will not be able to load and will hide itself
+If one of these resources is unavailable, the component will not be able to load and will hide itself
