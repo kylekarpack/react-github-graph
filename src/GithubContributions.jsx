@@ -20,6 +20,10 @@ class GithubContributions extends React.Component {
 		window.addEventListener("scroll", this.handleMouseOut);
 	}
 
+	componentWillUnmount() {
+		window.removeEventListener("scroll");
+	}
+
 	handleMouseOver = (e) => {
 		if (e.target && e.target.matches && e.target.matches("rect")) {
 			const rect = e.target.getBoundingClientRect()
