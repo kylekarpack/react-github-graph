@@ -1,5 +1,6 @@
 import React from "react";
 import { ChartContainer } from "./ChartContainer";
+import { Loader } from "./Loader";
 
 class GithubContributions extends React.Component {
 
@@ -7,6 +8,7 @@ class GithubContributions extends React.Component {
 		super(props);
 		this.state = { 
 			loaded: false,
+			error: false,
 			chart: "",
 			header: "",
 			tooltip: {
@@ -55,14 +57,16 @@ class GithubContributions extends React.Component {
 
 			responseText = await contributions.text();
 		} catch (e) {
+			this.setState({ error: true });
 			console.warn("Error retrieving graph: ", e);
 		}
 
 		const parser = new DOMParser(),
-			doc = await parser.parseFromString(responseText, "text/html");
-
-		const graph = doc.body.querySelector(".calendar-graph");
-		graph.querySelector("svg").setAttribute("viewBox", "0 0 828 128");
+			doc = await parser.parseFromString(responseText, "text/html"),
+			graph = doc.body.querySelector(".calendar-graph"),
+			svg = graph.querySelector("svg");
+		
+		svg.setAttribute("viewBox", `0 0 ${svg.getAttribute("width") || "828"} ${svg.getAttribute("height") || "128"}`);
 
 		this.setState({ 
 			loaded: true,
@@ -74,7 +78,11 @@ class GithubContributions extends React.Component {
 	render() {
 		return this.state.loaded ? (
 			<ChartContainer>
+
 				<div className="contributions">
+
+					{ this.state.error ? <div>Sorry, we couldn't load these contributions right now</div> : "" }
+
 					<h2 className="contributions-header">{this.state.header}</h2>
 					<div className="contributions-chart" 
 						onMouseOver={this.handleMouseOver}
@@ -90,7 +98,7 @@ class GithubContributions extends React.Component {
 					}
 				</div>
 			</ChartContainer>
-		) : "";
+		) : <Loader />;
 	}
 
 }
