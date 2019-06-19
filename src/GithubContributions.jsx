@@ -23,7 +23,7 @@ class GithubContributions extends React.Component {
 	}
 
 	componentWillUnmount() {
-		window.removeEventListener("scroll");
+		window.removeEventListener("scroll", this.handleMouseOut);
 	}
 
 	handleMouseOver = (e) => {
