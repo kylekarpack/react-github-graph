@@ -33,6 +33,6 @@
 		"build": "webpack"
 	},
 	"dependencies": {
-		"@babel/runtime": "^7.9.6"
+		"@babel/runtime": "^7.10.3"
 	}
 }
