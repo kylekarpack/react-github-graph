@@ -23,15 +23,9 @@ yarn add react-github-graph
 import React from "react";
 import { GithubContributions } from "react-github-graph"
 
-class Page extends React.Component {
-
+export default function Page() {
 	//...
-	render() {
-		return (
-			<GithubContributions username="{your username here}"></GithubContributions>
-		)
-	}
-
+	return <GithubContributions username="{your username here}"></GithubContributions>
 }
 
 ```
