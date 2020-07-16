@@ -6,9 +6,6 @@
 	"author": "Kyle Karpack <kylekarpack@gmail.com>",
 	"license": "MIT",
 	"private": false,
-	"publishConfig": { 
-			"registry": "https://npm.pkg.github.com/"
-	},
 	"devDependencies": {
 		"@babel/cli": "^7.4.4",
 		"@babel/core": "^7.4.5",
