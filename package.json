@@ -4,6 +4,7 @@
 	"description": "A lightweight React component for displaying a graph of Github contributions",
 	"main": "dist/index.js",
 	"author": "Kyle Karpack <kylekarpack@gmail.com>",
+	"publishConfig": { "registry": "https://npm.pkg.github.com/" },
 	"license": "MIT",
 	"private": false,
 	"devDependencies": {
