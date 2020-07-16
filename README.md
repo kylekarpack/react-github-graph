@@ -23,9 +23,10 @@ yarn add react-github-graph
 import React from "react";
 import { GithubContributions } from "react-github-graph"
 
-export default function Page() {
-	//...
-	return <GithubContributions username="{your username here}"></GithubContributions>
+export default function App() {
+	return (
+		<GithubContributions username="{your username here}"></GithubContributions>
+	);
 }
 
 ```
