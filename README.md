@@ -25,7 +25,7 @@ import { GithubContributions } from "react-github-graph"
 
 export default function App() {
 	return (
-		<GithubContributions username="{your username here}"></GithubContributions>
+		<GithubContributions username="{your username here}" />
 	);
 }
 

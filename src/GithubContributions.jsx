@@ -78,7 +78,6 @@ class GithubContributions extends React.Component {
 	render() {
 		return this.state.loaded ? (
 			<ChartContainer>
-
 				<div className="contributions">
 
 					{ this.state.error ? <div>Sorry, we couldn't load these contributions right now</div> : "" }
