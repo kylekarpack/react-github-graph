@@ -48,7 +48,7 @@
     "start": "webpack --watch",
     "build": "webpack --mode production",
     "prepublish": "yarn build",
-    "storybook": "cross-env NODE_PATH=src start-storybook -p 6006 --no-dll",
+    "storybook": "cross-env NODE_PATH=src start-storybook -p 6006 --no-dll --docs",
     "build-storybook": "build-storybook --no-dll"
   },
   "dependencies": {
