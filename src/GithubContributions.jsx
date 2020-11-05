@@ -1,7 +1,6 @@
 import React from "react";
 import { ChartContainer } from "./ChartContainer";
 import { Loader } from "./Loader";
-import "./GithubContributions.css";
 
 class GithubContributions extends React.Component {
 	constructor(props) {
@@ -90,7 +89,6 @@ class GithubContributions extends React.Component {
 					) : (
 						""
 					)}
-
 					<h2 className="contributions-header">{this.state.header}</h2>
 					<div
 						className="contributions-chart"

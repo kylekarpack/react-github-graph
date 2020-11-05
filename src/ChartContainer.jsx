@@ -6,6 +6,16 @@ const ChartContainer = styled.div`
 	}
 
 	.contributions {
+		--color-calendar-graph-day-bg: #ebedf0;
+		--color-calendar-graph-day-border: rgba(27, 31, 35, 0.06);
+		--color-calendar-graph-day-L1-bg: #9be9a8;
+		--color-calendar-graph-day-L2-bg: #40c463;
+		--color-calendar-graph-day-L3-bg: #30a14e;
+		--color-calendar-graph-day-L4-bg: #216e39;
+		--color-calendar-graph-day-L4-border: rgba(27, 31, 35, 0.06);
+		--color-calendar-graph-day-L3-border: rgba(27, 31, 35, 0.06);
+		--color-calendar-graph-day-L2-border: rgba(27, 31, 35, 0.06);
+		--color-calendar-graph-day-L1-border: rgba(27, 31, 35, 0.06);
 		animation: fadein 1s ease-in-out;
 		svg {
 			cursor: default;
@@ -16,13 +26,13 @@ const ChartContainer = styled.div`
 			}
 		}
 		rect:hover {
-			opacity: .5;
+			opacity: 0.5;
 		}
 		.tooltip {
-			animation: fadein .3s ease-in-out;
+			animation: fadein 0.3s ease-in-out;
 			font-size: 12px;
 			border-radius: 2px;
-			background: rgba(20,20,20,.9);
+			background: rgba(20, 20, 20, 0.9);
 			padding: 4px 10px;
 			color: #eee;
 			position: fixed;
@@ -37,7 +47,7 @@ const ChartContainer = styled.div`
 				position: absolute;
 				pointer-events: none;
 				background: transparent;
-				border-top-color: rgba(20,20,20,.9);
+				border-top-color: rgba(20, 20, 20, 0.9);
 				border-width: 5px;
 				margin-left: -5px;
 			}
@@ -45,10 +55,13 @@ const ChartContainer = styled.div`
 	}
 
 	@keyframes fadein {
-		from { opacity: 0; }
-		to   { opacity: 1; }
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
 	}
-
 `;
 
 export { ChartContainer };
