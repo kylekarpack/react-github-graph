@@ -1,6 +1,7 @@
 import React from "react";
 import { ChartContainer } from "./ChartContainer";
 import { Loader } from "./Loader";
+import "./GithubContributions.css";
 
 class GithubContributions extends React.Component {
 
@@ -62,7 +63,7 @@ class GithubContributions extends React.Component {
 		}
 
 		const parser = new DOMParser(),
-			doc = await parser.parseFromString(responseText, "text/html"),
+			doc = parser.parseFromString(responseText, "text/html"),
 			graph = doc.body.querySelector(".calendar-graph"),
 			svg = graph.querySelector("svg");
 		
