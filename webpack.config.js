@@ -1,4 +1,6 @@
-var path = require("path");
+const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 module.exports = {
 	entry: "./src/index.js",
 	output: {
@@ -7,11 +9,12 @@ module.exports = {
 		library: "",
 		libraryTarget: "commonjs",
 	},
+	plugins: [new MiniCssExtractPlugin()],
 	module: {
 		rules: [
 			{
 				test: /\.css$/i,
-				use: ["style-loader", "css-loader"],
+				use: [MiniCssExtractPlugin.loader, "css-loader"],
 			},
 			{
 				test: /\.(js|jsx)$/,
