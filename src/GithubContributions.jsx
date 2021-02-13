@@ -51,33 +51,33 @@ class GithubContributions extends React.Component {
 
 		try {
 			const contributions = await fetch(
-				`https://cors-anywhere.herokuapp.com/https://github.com/users/${this.props.username}/contributions`,
+				`https://cors.kylekarpack.workers.dev/corsproxy/?apiurl=https://github.com/users/${this.props.username}/contributions`,
 				{ mode: "cors" }
 			);
 
 			responseText = await contributions.text();
+			const parser = new DOMParser();
+			const doc = parser.parseFromString(responseText, "text/html");
+			const graph = doc.body.querySelector(".calendar-graph, .js-calendar-graph");
+			const svg = graph.querySelector("svg");
+			graph.querySelector(".f6").remove();
+
+			svg.setAttribute(
+				"viewBox",
+				`0 0 ${svg.getAttribute("width") || "828"} ${
+					svg.getAttribute("height") || "128"
+				}`
+			);
+
+			this.setState({
+				loaded: true,
+				header: doc.body.querySelector(".f4").innerHTML,
+				chart: graph.innerHTML,
+			});
 		} catch (e) {
-			this.setState({ error: true });
+			this.setState({ error: true, loaded: true });
 			console.warn("Error retrieving graph: ", e);
 		}
-
-		const parser = new DOMParser(),
-			doc = parser.parseFromString(responseText, "text/html"),
-			graph = doc.body.querySelector(".calendar-graph"),
-			svg = graph.querySelector("svg");
-
-		svg.setAttribute(
-			"viewBox",
-			`0 0 ${svg.getAttribute("width") || "828"} ${
-				svg.getAttribute("height") || "128"
-			}`
-		);
-
-		this.setState({
-			loaded: true,
-			header: doc.body.querySelector(".f4").innerHTML,
-			chart: graph.innerHTML,
-		});
 	}
 
 	render() {

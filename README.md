@@ -28,12 +28,11 @@ export default function App() {
 		<GithubContributions username="{your username here}" />
 	);
 }
-
 ```
 
 ## Notes
 Currently depends on the following resources:
-- https://cors-anywhere.herokuapp.com
+- https://cors.kylekarpack.workers.dev
 - https://github.com
 
 If one of these resources is unavailable, the component will not be able to load and will hide itself
