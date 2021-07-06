@@ -50,6 +50,6 @@
     "build-storybook": "build-storybook --no-dll"
   },
   "dependencies": {
-    "@babel/runtime": "^7.12.13"
+    "@babel/runtime": "^7.13.10"
   }
 }
