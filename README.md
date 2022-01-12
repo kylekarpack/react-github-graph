@@ -8,7 +8,7 @@ React Github Graph is a lightweight React component that displays Github contrib
 
 ## Installation
 ```
-npm install react-github-graph --save
+npm install react-github-graph
 ```
 
 or
@@ -24,9 +24,9 @@ import React from "react";
 import { GithubContributions } from "react-github-graph"
 
 export default function App() {
-	return (
-		<GithubContributions username="{your username here}" />
-	);
+  return (
+    <GithubContributions username="{your username here}" />
+  );
 }
 ```
 
