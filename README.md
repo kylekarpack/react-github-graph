@@ -1,6 +1,6 @@
 # react-github-graph
 
-![React Github Graph Sample](https://raw.githubusercontent.com/kylekarpack/react-github-graph/master/public/wide.png "Example usage")
+![React Github Graph Sample](https://raw.githubusercontent.com/kylekarpack/react-github-graph/main/demo.png "Example usage")
 
 ## Purpose
 
