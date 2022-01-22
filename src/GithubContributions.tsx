@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect, useState } from "react";
+import React, { FunctionComponent, MouseEventHandler, useEffect, useState } from "react";
 import { ChartContainer } from "./ChartContainer";
 import { Loader } from "./Loader";
 
@@ -17,7 +17,7 @@ const GithubContributions: FunctionComponent<{ username: string }> = ({
     data: null,
   });
 
-  const handleMouseOver = (e: { target: HTMLDivElement }) => {
+  const handleMouseOver = (e: any) => {
     if (e?.target?.matches("rect")) {
       const rect = e.target.getBoundingClientRect();
       setTooltip({
