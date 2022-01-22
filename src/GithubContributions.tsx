@@ -1,3 +1,4 @@
+import React from "react";
 import { FunctionComponent, useEffect, useState } from "react";
 import { ChartContainer } from "./ChartContainer";
 import { Loader } from "./Loader";

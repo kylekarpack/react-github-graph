@@ -1,7 +1,11 @@
 {
-	"compilerOptions": {
+  "include": ["src/index.ts"],
+  "compilerOptions": {
 		"isolatedModules": true,
-		"jsx": "react-jsx"
-	},
-	"include": ["src"]
+    "jsx": "react",
+    "target": "es5",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  }
 }
