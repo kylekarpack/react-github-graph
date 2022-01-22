@@ -1,4 +1,4 @@
-import React, { FunctionComponent, MouseEventHandler, useEffect, useState } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
 import { ChartContainer } from "./ChartContainer";
 import { Loader } from "./Loader";
 
@@ -8,7 +8,7 @@ const GithubContributions: FunctionComponent<{ username: string }> = ({
   const [state, setState] = useState({
     loaded: false,
     error: false,
-    chart: "",
+    chart: "", 
     header: "",
   });
 
