@@ -5,7 +5,8 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/index.cjs.js",
+  "main": "./dist/index",
+  "typings": "./dist/index",
   "module": "./dist/index.es.js",
   "exports": {
     ".": {
