@@ -3,11 +3,11 @@ import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 
 export default defineConfig({
-  plugins: [react(), dts({  })],
+  plugins: [react(), dts()],
   build: {
     outDir: "./dist",
     lib: {
-      entry: "./src/index.ts",
+      entry: "./index.ts",
       formats: ["cjs", "es"],
       fileName: "index",
     },
