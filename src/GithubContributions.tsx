@@ -49,7 +49,8 @@ const GithubContributions: FunctionComponent<{ username: string }> = ({
         ".calendar-graph, .js-calendar-graph"
       );
       const svg = graph.querySelector("svg");
-      graph.querySelector(".f6").remove();
+      graph.querySelector(".f6")?.remove();
+      graph.querySelector(".width-full > .float-right")?.remove();
 
       svg.setAttribute(
         "viewBox",
