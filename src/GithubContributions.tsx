@@ -48,10 +48,12 @@ const GithubContributions: FunctionComponent<{ username: string }> = ({
       const graph = doc.body.querySelector(
         ".calendar-graph, .js-calendar-graph"
       );
-      const svg = graph.querySelector("svg");
+
+      // Remove some extraneous content
       graph.querySelector(".f6")?.remove();
       graph.querySelector(".width-full > .float-right")?.remove();
 
+      const svg = graph.querySelector("svg");
       svg.setAttribute(
         "viewBox",
         `0 0 ${svg.getAttribute("width") || "828"} ${
