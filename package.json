@@ -36,6 +36,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^17.0.1",
+    "release-it": "^15.5.0",
     "styled-components": "^4.3.1",
     "vite": "^3.2.2",
     "vite-plugin-dts": "^1.6.6"
@@ -52,6 +53,13 @@
     "preview": "vite preview",
     "prepublish": "npm run build",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o docs-build"
+    "build-storybook": "build-storybook -o docs-build",
+    "release": "release-it"
+  },
+  "release-it": {
+    "github": {
+      "release": true,
+      "web": true
+    }
   }
 }
