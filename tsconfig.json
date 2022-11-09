@@ -1,11 +1,12 @@
 {
   "include": ["src", "index.ts"],
   "compilerOptions": {
-		"isolatedModules": true,
+    "isolatedModules": true,
     "jsx": "react",
     "target": "es5",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "lib": ["DOM", "ESNext"]
   }
 }

@@ -75,5 +75,7 @@ typings/
 # FuseBox cache
 .fusebox/
 
+.parcel-cache/
+
 dist/
 docs-build/
