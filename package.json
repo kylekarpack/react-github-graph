@@ -9,13 +9,12 @@
   "main": "./dist/index.js",
   "module": "./dist/index.es.js",
   "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.cjs.js"
+  "targets": {
+    "main": {
+      "optimize": true
     }
   },
-  "author": "Kyle Karpack <kylekarpack@gmail.com>",
+  "author": "Kyle Karpack <kylekarpack+rgg@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git://github.com/kylekarpack/react-github-graph.git"
@@ -23,6 +22,7 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
+    "@parcel/optimizer-swc": "^2.8.0",
     "@parcel/packager-ts": "^2.8.0",
     "@parcel/transformer-typescript-types": "^2.8.0",
     "@storybook/addon-actions": "^6.5.13",
@@ -30,21 +30,20 @@
     "@storybook/addon-essentials": "^6.5.13",
     "@storybook/addon-links": "^6.5.13",
     "@storybook/addon-storysource": "^6.5.13",
-    "@storybook/builder-vite": "^0.2.5",
+    "@storybook/builder-webpack5": "^6.5.13",
+    "@storybook/manager-webpack5": "^6.5.13",
     "@storybook/react": "^6.5.13",
     "@types/node": "^17.0.8",
     "@types/styled-components": "^5.1.21",
-    "@vitejs/plugin-react": "^2.2.0",
     "cross-env": "^7.0.2",
     "parcel": "^2.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^17.0.1",
     "release-it": "^15.5.0",
+    "storybook-builder-parcel": "^1.0.1-nightly.3523",
     "styled-components": "^4.3.1",
-    "typescript": "^4.7.4",
-    "vite": "^3.2.2",
-    "vite-plugin-dts": "^1.6.6"
+    "typescript": "^4.7.4"
   },
   "peerDependencies": {
     "react": ">= 16",
@@ -52,7 +51,7 @@
   },
   "scripts": {
     "test": "echo 'No tests yet'",
-    "start": "parcel",
+    "start": "parcel watch",
     "dev": "parcel",
     "build": "parcel build",
     "preview": "parcel index.html",
