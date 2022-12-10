@@ -43,7 +43,8 @@
     "release-it": "^15.5.0",
     "storybook-builder-parcel": "^1.0.1-nightly.3523",
     "styled-components": "^4.3.1",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "webpack": "^5.75.0"
   },
   "peerDependencies": {
     "react": ">= 16",
