@@ -79,3 +79,5 @@ typings/
 
 dist/
 docs-build/
+
+.DS_Store

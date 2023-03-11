@@ -1,6 +1,5 @@
-import React from "react";
-import { FunctionComponent, useEffect, useState } from "react";
-import { ChartContainer } from "./ChartContainer";
+import React, { FunctionComponent, useEffect, useState } from "react";
+import "./container.scss";
 import { Loader } from "./Loader";
 
 const GithubContributions: FunctionComponent<{ username: string }> = ({
@@ -9,7 +8,7 @@ const GithubContributions: FunctionComponent<{ username: string }> = ({
   const [state, setState] = useState({
     loaded: false,
     error: false,
-    chart: "", 
+    chart: "",
     header: "",
   });
 
@@ -94,29 +93,27 @@ const GithubContributions: FunctionComponent<{ username: string }> = ({
   }
 
   return (
-    <ChartContainer>
-      <div className="contributions">
-        {state.error ? (
-          <div>Sorry, we couldn't load these contributions right now</div>
-        ) : (
-          ""
-        )}
-        <h2 className="contributions-header">{state.header}</h2>
-        <div
-          className="contributions-chart"
-          onMouseOver={handleMouseOver}
-          onMouseOut={handleMouseOut}
-          dangerouslySetInnerHTML={{ __html: state.chart }}></div>
-        {tooltip && tooltip.data ? (
-          <div className="tooltip" style={tooltip.position}>
-            <strong>Date:</strong> {tooltip.data.date} <br />
-            <strong>Contributions:</strong> {tooltip.data.count}
-          </div>
-        ) : (
-          ""
-        )}
-      </div>
-    </ChartContainer>
+    <div className="react-github-graph-contributions">
+      {state.error ? (
+        <div>Sorry, we couldn't load these contributions right now</div>
+      ) : (
+        ""
+      )}
+      <h2 className="contributions-header">{state.header}</h2>
+      <div
+        className="contributions-chart"
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
+        dangerouslySetInnerHTML={{ __html: state.chart }}></div>
+      {tooltip && tooltip.data ? (
+        <div className="tooltip" style={tooltip.position}>
+          <strong>Date:</strong> {tooltip.data.date} <br />
+          <strong>Contributions:</strong> {tooltip.data.count}
+        </div>
+      ) : (
+        ""
+      )}
+    </div>
   );
 };
 
