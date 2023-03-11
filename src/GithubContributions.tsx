@@ -1,5 +1,4 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
-import "./container.scss";
 import { Loader } from "./Loader";
 
 const GithubContributions: FunctionComponent<{ username: string }> = ({

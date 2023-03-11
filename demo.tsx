@@ -1,11 +1,13 @@
 import React from "react";
-import { render } from "react-dom";
+import { createRoot } from "react-dom/client";
 import GithubContributions from "./src/GithubContributions";
 
-render(
+const container = document.getElementById("home");
+const root = createRoot(container!);
+
+root.render(
   <div>
     <h1>React Github Graph Demo Page</h1>
     <GithubContributions username="kylekarpack" />
-  </div>,
-  document.getElementById("home")
+  </div>
 );
