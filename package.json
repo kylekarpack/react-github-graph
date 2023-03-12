@@ -59,13 +59,15 @@
     "prepublish": "npm run build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o docs-build",
-    "release": "release-it",
-    "before:init": "npm run build"
+    "release": "release-it"
   },
   "release-it": {
     "github": {
       "release": true,
       "web": true
+    },
+    "hooks": {
+      "before:release": "npm run build"
     }
   }
 }
