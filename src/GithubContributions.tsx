@@ -21,10 +21,14 @@ const GithubContributions: FunctionComponent<{
   const handleMouseOver = (e: any) => {
     if (e?.target?.matches("rect")) {
       const rect = e.target.getBoundingClientRect();
+      const firstWord = e.target.innerHTML.split(" ")[0];
+      const parsed = parseInt(firstWord);
+      const count = isNaN(parsed) ? 0 : parsed;
+
       setTooltip({
         data: {
           ...e.target.dataset,
-          count: e.target.innerHTML.split(" ")[0],
+          count,
         },
         position: {
           left: rect.x + rect.width / 2,
