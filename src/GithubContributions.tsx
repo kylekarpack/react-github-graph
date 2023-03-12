@@ -102,7 +102,7 @@ const GithubContributions: FunctionComponent<{
       )}
 
       {renderHeader ? (
-        <>{renderHeader(state.header)}</>
+        renderHeader(state.header)
       ) : (
         <h2 className="contributions-header">{state.header}</h2>
       )}
