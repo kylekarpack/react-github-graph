@@ -8,6 +8,9 @@ const root = createRoot(container!);
 root.render(
   <div>
     <h1>React Github Graph Demo Page</h1>
-    <GithubContributions username="kylekarpack" />
+    <GithubContributions
+      username="kylekarpack"
+      renderHeader={(header) => <span>{header}</span>}
+    />
   </div>
 );

@@ -2,9 +2,10 @@ import React, { FunctionComponent, useEffect, useState } from "react";
 import { Loader } from "./Loader";
 import "./container.scss";
 
-const GithubContributions: FunctionComponent<{ username: string }> = ({
-  username,
-}) => {
+const GithubContributions: FunctionComponent<{
+  username: string;
+  renderHeader?: (header: string) => React.ReactNode;
+}> = ({ username, renderHeader }) => {
   const [state, setState] = useState({
     loaded: false,
     error: false,
@@ -99,7 +100,12 @@ const GithubContributions: FunctionComponent<{ username: string }> = ({
       ) : (
         ""
       )}
-      <h2 className="contributions-header">{state.header}</h2>
+
+      {renderHeader ? (
+        <>{renderHeader(state.header)}</>
+      ) : (
+        <h2 className="contributions-header">{state.header}</h2>
+      )}
       <div
         className="contributions-chart"
         onMouseOver={handleMouseOver}
