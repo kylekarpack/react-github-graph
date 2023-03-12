@@ -22,7 +22,10 @@ const GithubContributions: FunctionComponent<{
     if (e?.target?.matches("rect")) {
       const rect = e.target.getBoundingClientRect();
       setTooltip({
-        data: e.target.dataset,
+        data: {
+          ...e.target.dataset,
+          count: e.target.innerHTML.split(" ")[0],
+        },
         position: {
           left: rect.x + rect.width / 2,
           top: rect.y - 4,
