@@ -1,6 +1,6 @@
 {
   "name": "react-github-graph",
-  "version": "1.6.6",
+  "version": "1.6.7",
   "description": "A lightweight React component for displaying a graph of Github contributions",
   "files": [
     "dist"
