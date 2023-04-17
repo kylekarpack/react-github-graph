@@ -97,7 +97,19 @@ const GithubContributions: FunctionComponent<{
   }, [username]);
 
   if (!state.loaded) {
-    return <Loader />;
+    const hiddenLoadingLabel = "Loading...";
+    return (
+      <>
+        <div style={{ visibility: "hidden" }}>
+          {renderHeader ? (
+            renderHeader(hiddenLoadingLabel)
+          ) : (
+            <h2 className="contributions-header">{hiddenLoadingLabel}</h2>
+          )}
+        </div>
+        <Loader />
+      </>
+    );
   }
 
   return (

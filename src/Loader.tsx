@@ -3,7 +3,13 @@ import { FunctionComponent } from "react";
 
 export const Loader: FunctionComponent = () => {
   return (
-    <div style={{ textAlign: "center", margin: "4em auto" }}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "132px",
+      }}>
       <svg
         style={{
           boxShadow: "content-box",
